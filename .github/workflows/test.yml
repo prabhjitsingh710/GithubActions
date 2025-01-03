@@ -1,7 +1,7 @@
 name: test
 on: push
 jobs: 
-    first_job:
+    Testing:
         runs-on: ubuntu-latest
         steps:
             - name: Clone or get my code here
@@ -14,4 +14,20 @@ jobs:
               run: npm ci
             - name: Run tests
               run: npm test
+    Deploying:
+        needs: Testing
+        runs-on: ubuntu-latest
+        steps:
+            - name: Clone or get my code here
+              uses: actions/checkout@v4
+            - name: Install NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 18
+            - name: Install dependencies
+              run: npm ci
+            - name: Build Project
+              run: npm run build
+            - name: Deploy
+              run: echo "deploying has passed"
 
