@@ -1,4 +1,4 @@
-name: Output some info
+name: Omit_it
 on: workflow_dispatch
 jobs:
   Kuch_info:
