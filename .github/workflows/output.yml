@@ -1,5 +1,5 @@
 name: Omit_it
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 jobs:
   Kuch_info:
       runs-on: ubuntu-latest
